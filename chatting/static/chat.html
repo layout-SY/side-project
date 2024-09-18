@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>채팅</title>
+		<link rel="stylesheet" href="./css/chat.css" />
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/js/index.js"></script>
+		<input type="hidden" id="cookieData" value="{{userData}}" />
+	</head>
+	<body>
+		<div id="logout">
+			<a href="/logout">Log Out</a>
+		</div>
+		<div id="main">
+			<div id="chat">
+				<!-- 채팅 메시지 영역 -->
+			</div>
+			<div id="input">
+				<input type="text" id="test" placeholder="메시지를 입력해주세요.." onkeypress="show_name(event)" />
+				<button onclick="send()">전송</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function show_name(e) {
+				const code = e.code;
+
+				if (code == 'Enter') {
+					send();
+				}
+			}
+		</script>
+	</body>
+</html>
